@@ -293,7 +293,7 @@ class SimpleJobRepositoryTests {
 	}
 
 	@ParameterizedTest
-	@EnumSource(mode = EnumSource.Mode.INCLUDE, names = {"COMPLETED", "ABANDONED"})
+	@EnumSource(mode = EnumSource.Mode.INCLUDE, names = { "COMPLETED", "ABANDONED" })
 	void testCreateJobExecutionAlreadyComplete(BatchStatus batchStatus) {
 		jobExecution.setStatus(batchStatus);
 		jobExecution.setEndTime(LocalDateTime.now());

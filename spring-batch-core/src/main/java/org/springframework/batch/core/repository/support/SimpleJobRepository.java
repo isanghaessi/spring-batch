@@ -111,7 +111,8 @@ public class SimpleJobRepository extends SimpleJobExplorer implements JobReposit
 							+ "so it may be dangerous to proceed. Manual intervention is probably necessary.");
 				}
 				if (status == BatchStatus.COMPLETED || status == BatchStatus.ABANDONED) {
-					JobParameters identifyingJobParameters = new JobParameters(execution.getJobParameters().getIdentifyingParameters());
+					JobParameters identifyingJobParameters = new JobParameters(
+							execution.getJobParameters().getIdentifyingParameters());
 					throw new JobInstanceAlreadyCompleteException(
 							"A job instance already exists and is complete for identifying parameters="
 									+ identifyingJobParameters + ".  If you want to run this job again, "
